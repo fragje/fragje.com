@@ -1,0 +1,23 @@
+{
+  "name": "Semini",
+  "version": "0.0.0",
+  "authors": [
+    "Frank Gjertsen <frank.gjertsen@gmail.com>"
+  ],
+  "homepage": "http://fragje.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "Cortana": "~1.2.7",
+    "modernizr": "~2.8.3",
+    "breakpoint-sass": "~2.5.0"
+  },
+  "dependencies": {
+    "susy": "~2.2.2"
+  }
+}
