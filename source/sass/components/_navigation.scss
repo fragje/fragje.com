@@ -87,11 +87,14 @@
   @include transition-duration(.2s);
 
   &:before {
-    @extend .ui-plus-small;
+    @extend .icon;
+    @extend .icon-plus;
     content: "";
     position: absolute;
-    left: 1em;
-    top: 1em;
+    left: 50%;
+    top: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
   }
 
   &:hover {

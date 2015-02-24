@@ -149,7 +149,7 @@ gulp.task('sprite', ['img'], function() {
             selector: 'icon-%f',
             baseSize: 16,
             padding: 5,
-            cssFile: '../../source/sass/modules/_sprite.scss',
+            cssFile: '../../source/sass/components/_sprite-automatic.scss',
             svg: {
                 sprite: "img/sprite/export/sprite.svg"
             }

@@ -4,13 +4,12 @@
   @include padding-leader(1.5, $h1-font-size);
 
   a {
-    @extend .ui-logo-small;
+    @extend .icon;
+    @extend .icon-logo;
     // background: image-url('logo-fragje.png') no-repeat 0 0;
     // width: image-width('logo-fragje.png');
     // height: image-height('logo-fragje.png');
     display: block;
-    text-indent: -9999em;
-    overflow: hidden;
     margin: 0 auto;
 
     @media (min-width: $breakSmall) {
@@ -129,4 +128,14 @@
 h1.title-main {
   // @include adjust-leading-to(2.5, $h1-font-size);
   @include trailer(1, $h1-font-size);
+}
+
+// Footer social
+.icon-twitter,
+.icon-github {
+  margin-right: 1em;
+  
+  &:before {
+    margin-top: -5px;
+  }
 }

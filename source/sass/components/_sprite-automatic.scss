@@ -1,0 +1,47 @@
+.icon {
+    font-size: 16px;
+}
+
+.icon:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("../img/sprite/export/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 5.625em 12.875em;
+}
+
+.no-svg .icon:before {
+    background-image: url("../img/sprite/export/sprite.png");
+}
+
+.icon.icon-github:before {
+    background-position: -0.3125em -0.3125em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.icon.icon-logo:before {
+    background-position: -0.3125em -2.1875em;
+    width: 5em;
+    height: 5em;
+}
+
+.icon.icon-minus:before {
+    background-position: -0.3125em -7.8125em;
+    width: 1.125em;
+    height: 1.125em;
+}
+
+.icon.icon-plus:before {
+    background-position: -0.3125em -9.5625em;
+    width: 1.125em;
+    height: 1.125em;
+}
+
+.icon.icon-twitter:before {
+    background-position: -0.3125em -11.3125em;
+    width: 1.25em;
+    height: 1.25em;
+}
+
