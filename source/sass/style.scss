@@ -1,37 +1,25 @@
-// Vendor
-@import "../../bower_components/susy/sass/susy";
+// Compass
+@import "../../bower_components/compass-mixins/lib/compass";
 @import "../../bower_components/breakpoint-sass/stylesheets/breakpoint";
 
-// Global
-@import "settings";
-@import "global/functions";
+// Misc
+@import "misc/variables";
+@import "misc/functions";
+@import "misc/mixins";
 
 // Base
-@import "base/base"; // Modified normalize
+@import "base/normalize";
+@import "base/typography";
 
-// Layout 
+// Layout
 @import "layout/layout";
-@import "layout/grid";
-@import "layout/template";
 
-// Modules
-@import "modules/helper-classes";
-@import "modules/sprite";
-@import "modules/breadcrumb";
-@import "modules/buttons";
-@import "modules/forms";
-@import "modules/media";
-@import "modules/pager";
-@import "modules/tables";
-
-body {
-  @include breakpoint(50em) {
-    background-color: orange;
-  }
-}
-
-main {
-  @include breakpoint(50em) {
-    @include span(2);
-  }
-}
+// Components
+@import "components/misc";
+@import "components/lists";
+@import "components/sprite";
+@import "components/code-highlight"; 
+@import "components/media";
+@import "components/navigation";
+@import "components/buttons";
+@import "components/ui-icons-sprites";

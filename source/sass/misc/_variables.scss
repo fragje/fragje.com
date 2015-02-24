@@ -1,0 +1,14 @@
+// Font
+$one-px: 1px;
+$base-font-size-raw: 18;
+
+// Breakpoints
+$breakSmall: 35em;
+$breakMedium: 52em;
+
+// Colors
+$colorText: #D8D8D8;
+$colorLink: #F7C76D;
+$colorLinkActive: scale-lightness($colorLink, 15);
+$colorBackground: #242628;
+$colorForeground: #383B3F;

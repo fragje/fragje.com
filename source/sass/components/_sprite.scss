@@ -1,0 +1,19 @@
+$sprite: sprite-map("sprite/*.png");
+ 
+[class^="icon-"] {
+  background-repeat: no-repeat;
+  display: inline-block;
+  overflow: hidden;
+  text-indent: -99999px;
+  margin-right: em(15);
+  position: relative;
+  top: em(3);
+}
+
+$icons-social: twitter, github;
+
+@each $file-name in $icons-social {
+  .icon-#{$file-name} {
+    @extend .ui-#{$file-name}-small;
+  }
+}

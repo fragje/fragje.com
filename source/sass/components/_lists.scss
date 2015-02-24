@@ -1,0 +1,29 @@
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list-horizontal {
+  @extend .clearfix;
+  
+  li {
+    float: left;
+  }
+}
+
+// List content wrapper
+.list-wrapper + .list-wrapper {
+  @include leader(1.5);
+}
+
+.list-wrapper-lead {
+  @include trailer(2);
+}
+
+// List sprite
+.list-sprite {
+  @include trailer(1);
+  @include leader(1);
+  @include adjust-leading-to(1.5);
+}

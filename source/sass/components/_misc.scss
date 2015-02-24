@@ -1,0 +1,132 @@
+// Logo
+.logo {
+  margin-top: 0;
+  @include padding-leader(1.5, $h1-font-size);
+
+  a {
+    @extend .ui-logo-small;
+    // background: image-url('logo-fragje.png') no-repeat 0 0;
+    // width: image-width('logo-fragje.png');
+    // height: image-height('logo-fragje.png');
+    display: block;
+    text-indent: -9999em;
+    overflow: hidden;
+    margin: 0 auto;
+
+    @media (min-width: $breakSmall) {
+      margin: 0;
+    }
+  }
+}
+
+// Float
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.right-img {
+  @extend .right;
+  margin-left: 1em;
+  margin-bottom: .5em;
+}
+
+// Clearfix
+.clearfix {
+  &:before,
+  &:after {
+      content: " "; /* 1 */
+      display: table; /* 2 */
+  }
+
+  &:after {
+      clear: both;
+  }
+
+  .ie7 & { // TODO: Double check to see what class will be ie7 and below
+    *zoom: 1;
+  }
+}
+
+// Inline 
+.inline {
+  display: inline;
+}
+
+// Visually hidden
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0); 
+  height: 1px; 
+  margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
+  width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, 
+.visuallyhidden.focusable:focus { 
+  clip: auto; 
+  height: auto; 
+  margin: 0; 
+  overflow: visible; 
+  position: static; 
+  width: auto;
+}
+
+// Page 
+.page {
+  background-color: $colorForeground;
+  padding-bottom: em(20);
+}
+
+// Page header
+.page-header {
+  position: relative;
+}
+
+// Main content
+.main-content {
+}
+
+// Page footer
+.page-footer {
+  background-color: $colorBackground;
+  padding-top: em(40);
+  margin-bottom: em(20);
+  @include box-shadow(darken($colorBackground, 3%) 0 10px 15px -6px inset);
+
+}
+
+// Social links
+.social-links {
+}
+
+// Posted 
+.posted {
+  color: adjust-lightness($colorText, -20);
+  @include adjust-font-size-to(16px);
+}
+
+// Lead
+.lead {
+  @include adjust-font-size-to(21px, 1.1);
+}
+
+.title-main {
+  + .posted {
+    position: relative;
+    top: -(em(23));
+    @include adjust-leading-to(.5, 16px);
+    @include trailer(0);
+  }
+}
+h1.title-main {
+  // @include adjust-leading-to(2.5, $h1-font-size);
+  @include trailer(1, $h1-font-size);
+}

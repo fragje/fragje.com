@@ -1,0 +1,8 @@
+// Modular scale function
+// Calculator: http://modularscale.com/
+// Articles to read: http://viljamis.com/blog/2012/typography/ and http://alistapart.com/article/more-meaningful-typography
+$browser-context: $base-font-size-raw; // Default context
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}

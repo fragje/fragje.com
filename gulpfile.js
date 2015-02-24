@@ -181,7 +181,7 @@ gulp.task('sass', function () {
         .pipe(sass({
             errLogToConsole: true // Prevent gulp from breaking on sass error
             }))
-        .pipe(prefix(['last 15 versions', '> 1%', 'ie 8'], { cascade: true }))
+        // .pipe(prefix(['last 15 versions', '> 1%', 'ie 8'], { cascade: true }))
         .pipe(gulp.dest(path.dest + 'assets/css'))
         .pipe(browserSync.reload({stream:true}))
         .pipe(cssMin())
