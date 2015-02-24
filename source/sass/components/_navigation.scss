@@ -21,14 +21,14 @@
 
     &:hover,
     &:focus {
-      background-color: adjust-lightness($colorBackground, -2);
+      background-color: scale_color($colorBackground, $lightness: -10%);
       margin-top: -1px; 
       text-decoration: none;    
     }
 
     &:active,
     &.active {
-      background-color: adjust-lightness($colorBackground, -4);
+      background-color: scale_color($colorBackground, $lightness: -10%);
       margin-top: 0; 
     }
   }
@@ -63,7 +63,7 @@
 
       &.active {
         color: $colorLinkActive;
-        border-bottom: em(4) solid adjust-lightness($colorForeground, -6);
+        border-bottom: em(4) solid scale_color($colorForeground, $lightness: -40%);
         padding-bottom: em(8);
         cursor: default;
       }
@@ -98,7 +98,7 @@
   }
 
   &:hover {
-    background-color: scale-lightness($colorBackground, 3);
+    background-color: scale_color($colorBackground, $lightness: 3%);
   }
 
 
