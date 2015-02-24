@@ -106,7 +106,7 @@
     background-color: $colorText;
 
     &:before {
-      @extend .ui-minus-small;
+      @extend .icon-minus;
     }
 
     &:hover {
