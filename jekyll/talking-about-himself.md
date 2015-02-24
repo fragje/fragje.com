@@ -6,7 +6,7 @@ menu-item: about
 
 # Hi there
 <div class="frame-circle half-max-right">
-  <img src="img/frank-gjertsen.jpg" alt="Frank Gjertsen">
+  <img src="/assets/img/frank-gjertsen.jpg" alt="Frank Gjertsen">
 </div>
 
 I'm Frank Gjertsen, a web designer and front-end developer from Norway. I built my first website in 2005, and have ever since been inspired by the flexibility there is on the internet.
