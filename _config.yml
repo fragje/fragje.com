@@ -1,0 +1,10 @@
+name: fragje
+timezone: Europe/Oslo
+markdown: kramdown
+pygments: true
+source: ./jekyll
+destination: ./public
+layouts: ./jekyll/_layouts-automated
+exclude: []
+keep_files: ["assets", "styleguide"]
+permalink: /blog/:title/

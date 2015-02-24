@@ -22,6 +22,7 @@ var fileinclude = require('gulp-file-include');
 var ghPages     = require('gulp-gh-pages');
 var rename      = require('gulp-rename');
 var cache       = require('gulp-cache');
+var cp          = require('child_process');
 
 var env = process.env.NODE_ENV;
 
@@ -29,8 +30,29 @@ var env = process.env.NODE_ENV;
 var path = {
     dest: './public/',
     src: './source/',
-    bower: './bower_components'
-}
+    jekyll: './jekyll/',
+    bower: './bower_components/'
+};
+
+var messages = {
+    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
+};
+
+/**
+ * Build the Jekyll Site
+ */
+gulp.task('jekyll-build', function (done) {
+    browserSync.notify(messages.jekyllBuild);
+    return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
+        .on('close', done);
+});
+
+/**
+ * Rebuild Jekyll & do page reload
+ */
+gulp.task('jekyll-rebuild', ['jekyll-layouts', 'jekyll-build'], function () {
+    browserSync.reload();
+});
 
 // Delete destination folder
 gulp.task('clean', function() {
@@ -57,17 +79,17 @@ gulp.task('copy-assets', function() {
 });
 
 // Markup task
-gulp.task('html', function() {
-  return gulp.src([path.src + 'html/**/*.html', '!' + path.src + 'html/_includes/**/*.html'])
-    .pipe(fileinclude({
-      prefix: '@@',
-      basepath: path.src + 'html/_includes'
-    }))
-    .pipe(preprocess()) // Run with $ NODE_ENV=production gulp html
-    .pipe(gulp.dest(path.dest))
-    .pipe(browserSync.reload({stream:true}));
-
-});
+// gulp.task('html', function() {
+//   return gulp.src([path.src + 'html/**/*.html', '!' + path.src + 'html/_includes/**/*.html'])
+//     .pipe(fileinclude({
+//       prefix: '@@',
+//       basepath: path.src + 'html/_includes'
+//     }))
+//     .pipe(preprocess()) // Run with $ NODE_ENV=production gulp html
+//     .pipe(gulp.dest(path.dest))
+//     .pipe(browserSync.reload({stream:true}));
+// 
+// });
 
 // Image task
 gulp.task('img', function () {
@@ -168,12 +190,24 @@ gulp.task('sass', function () {
         .pipe(browserSync.reload({stream:true}));
 });
 
+// Jekyll layout preprocess
+gulp.task('jekyll-layouts', function() {
+    return gulp.src([path.src + 'jekyll-layouts/**/*.html'])
+        .pipe(preprocess()) // Run with $ NODE_ENV=production gulp html
+        .pipe(gulp.dest(path.jekyll + '_layouts-automated'))
+        .pipe(browserSync.reload({stream:true}));
+});
+
 // Watch task
 gulp.task('watch', function () {
     gulp.watch(path.src + 'sass/**/*.scss', ['sass', 'styleguide']);
     gulp.watch(path.src + 'images/sprite/*.svg', ['sprite']);
     gulp.watch(path.src + 'javascript/**/*.js', ['js']);
-    gulp.watch(path.src + 'html/**/*.html', ['html'])
+    gulp.watch(path.src + 'html/**/*.html', ['html']);
+    gulp.watch([
+        path.src + 'jekyll-layouts/**/*.html',
+        path.jekyll + '**/*'
+    ], ['jekyll-rebuild']);
 });
 
 // Deployment tasks
@@ -185,7 +219,7 @@ gulp.task('deploy-gh', function () {
 });
 
 // Build task
-gulp.task('build', ['sass', 'js', 'styleguide', 'img', 'html', 'sprite', 'copy-files', 'copy-assets']);
+gulp.task('build', ['jekyll-layouts', 'jekyll-build', 'sass', 'js', 'styleguide', 'img', 'sprite', 'copy-files', 'copy-assets']);
 
 // Default task
 gulp.task('default', ['browser-sync', 'watch']);

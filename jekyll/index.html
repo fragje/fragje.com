@@ -1,0 +1,26 @@
+---
+layout: default
+title: Blog about web design and front-end development.
+summary: Frank Gjertsen's writing about lessons learned in web design and front-end development.
+menu-item: blog
+---
+<section>
+  <h1 class="visuallyhidden">Blog posts</h1>
+  {% for post in site.posts limit:1 %}
+    <article class="list-wrapper-lead">
+      <h1 class="title-main"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+      <p class="posted">{{ post.date | date_to_string }}</p>
+      <p class="lead">{{ post.summary }}</p>
+      <p><a href="{{ post.url }}">Read more of {{ post.title | downcase }} »</a></p>
+    </article>
+  {% endfor %}
+
+  {% for post in site.posts limit:4 offset:1 %}
+    <article class="list-wrapper">
+      <h1 class="h2 title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+      <p class="posted">{{ post.date | date_to_string }}</p>
+      <p>{{ post.summary }}</p>
+      <p><a href="{{ post.url }}">Read more of {{ post.title | downcase }} »</a></p>
+    </article>
+  {% endfor %}
+</section>
