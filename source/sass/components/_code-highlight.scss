@@ -6,10 +6,11 @@
   overflow: auto;
   margin-bottom: 24px;
   color: $colorText;
-  background: $colorBackground;
+  // background: $colorBackground;
   border-top: 1px solid adjust-lightness($colorForeground, -3);
   border-bottom: 1px solid adjust-lightness($colorForeground, 3);
-  @include background-image(linear-gradient(left, $colorForeground, adjust-lightness($colorForeground, -4) 30%, adjust-lightness($colorForeground, -4) 70%, $colorForeground));
+  // @include background-image(linear-gradient(to left, $colorForeground, adjust-lightness($colorForeground, -4) 30%, adjust-lightness($colorForeground, -4) 70%, $colorForeground));
+  @include background-image(linear-gradient(to left, $colorForeground, scale_color($colorForeground, $lightness: -15%) 30%, scale_color($colorForeground, $lightness: -15%) 70%, $colorForeground));
 
   @media (min-width: $breakMedium) {
     margin-left: 0;
