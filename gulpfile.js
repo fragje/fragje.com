@@ -109,6 +109,7 @@ gulp.task('img', function () {
 gulp.task('js', function() {
     return gulp.src([
             path.src + 'javascript/vendor/*.js',
+            path.bower + 'jquery/dist/jquery.js',
             path.src + 'javascript/*.js'
         ])
         .pipe(jshint())
