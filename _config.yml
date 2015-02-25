@@ -1,7 +1,7 @@
 name: fragje
 timezone: Europe/Oslo
 markdown: kramdown
-pygments: true
+highlighter: pygments
 source: ./jekyll
 destination: ./public
 layouts: ./jekyll/_layouts-automated
