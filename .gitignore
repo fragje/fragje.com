@@ -6,6 +6,7 @@ design
 _layouts
 .bundle
 *.sublime-workspace
+*.sublime-project
 
 # Packages
 bower_components
