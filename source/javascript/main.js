@@ -6,5 +6,5 @@
     e.preventDefault();
     $navBar.slideToggle(200);
     $(this).toggleClass('active');
-  })
+  });
 })();
