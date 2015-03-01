@@ -7,4 +7,4 @@ destination: ./public
 layouts: ./jekyll/_layouts-automated
 exclude: []
 keep_files: ["assets", "styleguide"]
-permalink: /blog/:title/
+permalink: /:categories/:title/
