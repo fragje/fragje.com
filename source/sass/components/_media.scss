@@ -23,3 +23,15 @@ img {
   overflow: hidden;
   @include border-radius(50%);
 }
+
+// figure
+figure {
+  margin: 0 0 .75em;
+}
+
+// figcaption
+figcaption {
+  margin: 0 1em;
+  font-size: em(14);
+  line-height: 1.3;
+}
