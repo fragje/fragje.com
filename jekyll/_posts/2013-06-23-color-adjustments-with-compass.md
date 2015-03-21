@@ -3,7 +3,7 @@ layout: post
 title:  "Color adjustments with compass"
 date:   2013-06-23 12:00:00
 comments: true
-categories: post
+categories: blog post
 tags: compass, sass, css, color
 summary: Adjusting colors with a css preprosessor like LESS and Sass is really great, but the result is not always how you would expect. I explore alternatives to the lighten and darken functions, and compass have a few tricks up its sleeve.
 ---

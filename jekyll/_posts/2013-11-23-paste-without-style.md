@@ -3,7 +3,7 @@ layout: post
 title:  "Paste without style"
 date:   2013-11-23 09:00:00
 comments: true
-categories: post
+categories: blog post
 tags: osx, shortcut
 summary: Once in a while I learn small tips and tricks that I wish I knew before. That happened recently when I figured out how to paste text and at the same time remove text formatting.
 ---

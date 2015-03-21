@@ -3,7 +3,7 @@ layout: post
 title:  "SVG sprites"
 date:   2014-05-04 09:30:00
 comments: true
-categories: post
+categories: blog post
 tags: svg, sprite
 summary: Over the years I have been using several techniques to do ui graphic in front-end development. Lately I have used svg-sprites, and this is how I made it work on my web site.
 ---

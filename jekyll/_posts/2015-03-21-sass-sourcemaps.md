@@ -3,7 +3,7 @@ layout: post
 title:  "Sass Sourcemaps in Chrome"
 date:   2015-03-21 09:00:00
 comments: true
-categories: post
+categories: blog post
 tags: sourcemap, sass, gulp
 summary: I tried it before, Sourmaps sounded amazing, like the future I wanted to have! However, it didn't work for me last time, partly because of Compass, partly because it was at a early stage. Now however, the technology have evolved, I'm past the compass days and Libsass and Gulp are my new best friends.
 ---
